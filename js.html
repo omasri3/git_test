@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 </head>
 <body>
     <h1>Hello World</h1>
+    <div id = "container">
+
+    </div>
     <script>
-        function add7(num){
-            return num+7;
-        }
+        redPara = document.createElement("p");
+        redPara.style.cssText = "color: red"
+        redPara.textContent = "Hey! I'm Red!"
+        container = document.querySelector("#container")
+        console.log(redPara.textContent);
+        container.appendChild(redPara);
 
-        function multiply(num, num2){
-            return num*num2;
-        }
+        blueH3 = document.createElement("h3");
+        blueH3.style.cssText = "color: blue"
+        blueH3.textContent = "I'm a blue h3!"
+        container.appendChild(blueH3)
 
-        function capitalize(str){
-            str = str[0].toUpperCase() + str.slice(1);
-            return str;
-        }
-
-        function lastLetter(str){
-            return str.slice(str.length-1);
-        }
-    </script>
-
-    <script src = "newFunctions.js">
+        newDiv = document.createElement("div");
+        newDiv.style.cssText = "background-color: pink; border-color: black; border-style: solid; border-width: medium";
+        divH1 = document.createElement("h1");
+        pH1 = document.createElement("p");
+        divH1.textContent = "I'm in a div!";
+        pH1.textContent = "Me too!";
+        newDiv.appendChild(divH1);
+        newDiv.appendChild(pH1);
+        container.appendChild(newDiv);
 
     </script>
 
