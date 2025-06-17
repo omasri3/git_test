@@ -129,8 +129,52 @@ function unique(arr) {
     return uniqueArr;
 }
 
-strArr = ["wee", "wee", "cow", "cow", "--00"]
+// strArr = ["wee", "wee", "cow", "cow", "--00"]
 
-console.log(unique(strArr));
+// console.log(unique(strArr));
 
 
+function mapNames(objArray) {
+    let nameArray = [];
+    for (let i=0; i<objArray.length; i++){
+        nameArray = nameArray.concat([objArray[i].name]);
+    }
+    return nameArray;
+}
+
+function mapObjects(objArray) {
+    let newObjArray = [];
+    for (let i=0; i<objArray.length; i++) {
+        newObjArray[i] = {
+            fullName: objArray[i].name + " " + objArray[i].surName,
+            id: objArray[i].id
+        }
+    }
+    return newObjArray;
+}
+
+function sortByAge(a,b){
+    return
+}
+
+let john = {name: "john", surName: "Doe", age: 35, id: 1};
+let jane = {name: "jane", surName: "Hunt", age: 25, id: 2};
+let joe = {name: "joe", surName: "Shmoe", age: 45, id: 3};
+
+users = [john, jane, joe]
+
+//console.log(mapObjects(users));
+
+users.sort((a,b) => {
+    return a.age - b.age
+})
+
+//console.log(users)
+let averageAge = 0;
+users.forEach((user) => {
+    averageAge = averageAge + user.age;
+    console.log(averageAge);
+    console.log(user.age);
+});
+averageAge = averageAge / users.length;
+console.log(averageAge)
