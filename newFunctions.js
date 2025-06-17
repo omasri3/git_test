@@ -157,9 +157,9 @@ function sortByAge(a,b){
     return
 }
 
-let john = {name: "john", surName: "Doe", age: 35, id: 1};
-let jane = {name: "jane", surName: "Hunt", age: 25, id: 2};
-let joe = {name: "joe", surName: "Shmoe", age: 45, id: 3};
+let john = {name: "john", surName: "Doe", age: 35, id: "john"};
+let jane = {name: "jane", surName: "Hunt", age: 25, id: "jane"};
+let joe = {name: "boe", surName: "Shmoe", age: 45, id: "boe"};
 
 users = [john, jane, joe]
 
@@ -177,4 +177,12 @@ users.forEach((user) => {
     console.log(user.age);
 });
 averageAge = averageAge / users.length;
-console.log(averageAge)
+//console.log(averageAge)
+
+organizedById = users.reduce((accumulator, currentValue) => {
+    accumulator[currentValue.id] = currentValue;
+    return accumulator;
+},{});
+
+console.log(users)
+console.log(organizedById)
